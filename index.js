@@ -45,10 +45,25 @@ function addBookToLibrary (){
 
 function bookDisplay (){
     const bookGrid = document.createElement('div')
-    bookGrid.textContent = myLibrary[i].bookTitle + myLibrary[i].author + myLibrary[i].bookLength + myLibrary[i].readStatus 
+    const form2 = document.createElement('form')
+    const read = document.createElement('label')
+    read.textContent = "read?"
+    const readButton = document.createElement('input')
+    readButton.type = "checkbox"
+    if (myLibrary[i].readStatus == "yes"){
+        readButton.checked = true
+    }
+    else {
+        readButton.checked = false
+    }
+    bookGrid.textContent = myLibrary[i].bookTitle + myLibrary[i].author + myLibrary[i].bookLength 
     bookGrid.id = i
     bookGrid.className = "bookCell"
     container.appendChild(bookGrid)
+    bookGrid.appendChild(form2)
+    form2.appendChild(read)
+    form2.appendChild(readButton)
+    dialog.close()
 }
 
 function removeBook (deletion) {
