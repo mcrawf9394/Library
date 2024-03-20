@@ -2,7 +2,8 @@ html {
     min-height: 100%;
 }
 #bookDisplay {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(5, 1fr);
 }

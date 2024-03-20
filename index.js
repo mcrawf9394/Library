@@ -35,16 +35,12 @@ function Book (author, bookTitle, bookLength, readStatus) {
     i++
 }
 
-function addBookToLibrary (){
- let getAuthor = prompt("Author Name")
- let getBookTitle = prompt("Title")
- let getBookLength = prompt("How Many Pages?")
- let getReadStatus = prompt("Read or unread") 
- Book(getAuthor, getBookTitle, getBookLength, getReadStatus)
-}
-
 function bookDisplay (){
     const bookGrid = document.createElement('div')
+    const title = document.createElement('h2')
+    title.textContent = myLibrary[i].bookTitle
+    const otherInfo = document.createElement('p')
+    otherInfo.textContent = myLibrary[i].author + ", " + myLibrary[i].bookLength 
     const form2 = document.createElement('form')
     const read = document.createElement('label')
     read.textContent = "read?"
@@ -56,13 +52,14 @@ function bookDisplay (){
     else {
         readButton.checked = false
     }
-    bookGrid.textContent = myLibrary[i].bookTitle + myLibrary[i].author + myLibrary[i].bookLength 
     bookGrid.id = i
     bookGrid.className = "bookCell"
     container.appendChild(bookGrid)
-    bookGrid.appendChild(form2)
     form2.appendChild(read)
     form2.appendChild(readButton)
+    bookGrid.appendChild(title)
+    bookGrid.appendChild(otherInfo)
+    bookGrid.appendChild(form2)
     dialog.close()
 }
 
