@@ -54,7 +54,15 @@ function bookDisplay (){
     }
     bookGrid.id = i
     bookGrid.className = "bookCell"
+    const deletionButton = document.createElement('button')
+    deletionButton.value = i
+    deletionButton.className = "deletionButton"
+    deletionButton.textContent = "Delete"
+    deletionButton.addEventListener('click', () => {
+        deletion(deletionButton.value)
+    })
     container.appendChild(bookGrid)
+    bookGrid.appendChild(deletionButton)
     form2.appendChild(read)
     form2.appendChild(readButton)
     bookGrid.appendChild(title)
@@ -62,7 +70,9 @@ function bookDisplay (){
     bookGrid.appendChild(form2)
     dialog.close()
 }
-
-function removeBook (deletion) {
-    container.removeChild(deletion)
+function deletion (value) {
+    let o = parseInt(value)
+    let element = document.getElementById(value)
+    container.removeChild(element)
+    delete myLibrary[o]
 }
