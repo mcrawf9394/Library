@@ -1,19 +1,36 @@
-html {
+html, body {
     min-height: 100%;
     min-width: 100%;
+    background-color: #23233b;
+    margin: 0;
+    padding: 0;
 }
-body {
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: #556884;
+header {
+    display: inline-flex;
     min-width: 100%;
+    background-color: #8d5a69;
+    justify-content: center;
+}
+h1 {
+    text-align: left;
+    margin-right: 1rem;
+}
+.addBook {
+    align-self: center;
+}
+#addBook {
+    border: none;
+    border-radius: 1rem;
+    background-color: white;
 }
 #bookDisplay {
+    margin-left: 10%;
+    margin-right: 10%;
     width: 80%;
     display: grid;
-    min-height: 60vh;
+    min-height: 75vh;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 12vh);
+    grid-template-rows: repeat(5, 15vh);
     grid-auto-rows: 12vh;
     gap: 2rem;
     margin-top: 2rem;
@@ -23,5 +40,12 @@ body {
     border-style: solid;
 }
 .bookCell {
-    background-color: #556884;
+    background-color: #23233b;
+}
+.deletionButton {
+    margin-left: 85%;
+}
+h2, p, .form2 {
+    margin-left: 40%;
+    color: #8d5a69;
 }

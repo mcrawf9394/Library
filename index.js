@@ -42,6 +42,7 @@ function bookDisplay (){
     const otherInfo = document.createElement('p')
     otherInfo.textContent = myLibrary[i].author + ", " + myLibrary[i].bookLength 
     const form2 = document.createElement('form')
+    form2.className = "form2"
     const read = document.createElement('label')
     read.textContent = "read?"
     const readButton = document.createElement('input')
