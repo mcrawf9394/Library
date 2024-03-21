@@ -52,6 +52,14 @@ function bookDisplay (){
     else {
         readButton.checked = false
     }
+    readButton.addEventListener('click', () => {
+        if (readButton.checked == true){
+            myLibrary[i].readStatus = "yes"
+        }
+        else {
+            myLibrary[i].readStatus = "no"
+        }
+    })
     bookGrid.id = i
     bookGrid.className = "bookCell"
     const deletionButton = document.createElement('button')
